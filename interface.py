@@ -20,7 +20,7 @@ with open('data.pickle', 'rb') as f:
 model = bot.init_model(train, output)
 
 if retrain:
-    model.fit(train, output, n_epoch=1000, batch_size=8, show_metric=True)
+    model.fit(train, output, n_epoch=900, batch_size=8, show_metric=True)
     model.save('model.tflearn')
 else:
     model.load('model.tflearn')
