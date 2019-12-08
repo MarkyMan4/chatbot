@@ -22,6 +22,10 @@
                 "The only letter that doesn’t appear on the periodic table is J.",
                 "A single strand of Spaghetti is called a Spaghetto.",
                 "In Colorado, USA, there is still an active volcano. It last erupted about the same time as the pyramids were being built in Egypt."]
+        },
+        {"tag": "time",
+                "patterns": ["time", "what time is it"],
+                "responses": [""]
         }
    ]
 }

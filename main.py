@@ -4,10 +4,14 @@ import numpy as np
 import tflearn
 import tensorflow as tf
 import random
-import json
 import pickle
+from datetime import datetime
+
 
 class ChatBot:
+
+    inputs = []
+    responses = []
 
     def prep_data(self, data):
         stemmer = LancasterStemmer()
@@ -93,10 +97,19 @@ class ChatBot:
         tag = labels[result_index]
 
         if result[0][result_index] < 0.7:
-            return 'I didn\'t understand that.'
+            response = 'I didn\'t understand that.'
         else:
-            for t in data['intents']:
-                if t['tag'] == tag:
-                    responses = t['responses']
+            # handle special cases
+            if tag == 'time':
+                response = datetime.now().strftime('%Y-%m-%d %H:%M')
+            else:
+                for t in data['intents']:
+                    if t['tag'] == tag:
+                        responses = t['responses']
+                        response = random.choice(responses)
+                        break
 
-            return random.choice(responses)
+        self.inputs.insert(0, inp)
+        self.responses.insert(0, response)
+
+        return response
