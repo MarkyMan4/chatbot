@@ -27,12 +27,10 @@ else:
 
 st.markdown('## Start chatting')
 inp = st.text_input('')
-resp = bot.get_bot_response(inp, data, labels, model, words)
 
 if inp != '':
-    # st.markdown(f'### {resp}')
+    resp = bot.get_bot_response(inp, data, labels, model, words)
 
-    # not working because arrays get cleared each time i submit
-    for i in range(len(bot.inputs)):
-        st.markdown(f'**Bot**: {bot.responses[i]}')
-        st.markdown(f'**You**: {bot.inputs[i]} \n ---')
+for i in range(len(bot.inputs)):
+    st.markdown(f'**Bot**: {bot.responses[i]}')
+    st.markdown(f'**You**: {bot.inputs[i]} \n ---')
