@@ -4,7 +4,7 @@ astor==0.8.0
 astroid==2.3.3
 attrs==19.3.0
 base58==1.0.3
-bleach==1.5.0
+bleach==3.3.0
 blinker==1.4
 boto3==1.10.34
 botocore==1.13.34
