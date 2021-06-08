@@ -34,7 +34,7 @@ nltk==3.4.5
 numpy==1.17.4
 pandas==0.25.3
 pathtools==0.1.2
-Pillow==6.2.1
+Pillow==8.2.0
 protobuf==3.11.1
 pylint==2.4.4
 pyrsistent==0.15.6
